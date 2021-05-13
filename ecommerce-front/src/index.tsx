@@ -4,6 +4,7 @@ import { ConnectedRouter } from 'connected-react-router'
 import Routes from "./Routes"
 import { Provider } from 'react-redux'
 import store, { history } from './store'
+import './style.css'
 
 
 ReactDOM.render(
