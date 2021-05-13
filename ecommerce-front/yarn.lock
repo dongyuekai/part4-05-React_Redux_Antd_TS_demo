@@ -2475,7 +2475,7 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
   dependencies:
     color-convert "^2.0.1"
 
-antd@^4.15.5:
+antd@^4.8.3:
   version "4.15.5"
   resolved "https://registry.nlark.com/antd/download/antd-4.15.5.tgz#c54bf3a8a7e537c57395165b47c6caa4f9ea4860"
   integrity sha1-xUvzqKflN8VzlRZbR8bKpPnqSGA=
