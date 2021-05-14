@@ -14,19 +14,18 @@ import { API } from '../../config'
 
 
 function* handleSignup(action: SignupAction) {
-  debugger
   try {
     yield axios.post(`${API}/signup`, action.payload)
-    debugger
     yield put(signupSuccess())
   } catch (error) {
-    yield put(signupFail('报错了--error~~~~'))
+    yield put(signupFail(error.response.data.error))
   }
 }
 type responseType = {
   data: any
 }
 function* handleSignin(action: SigninAction) {
+  console.log('signin--saga----')
   try {
     let response: responseType = yield axios.post(`${API}/signin`, action.payload)
     localStorage.setItem('jwt', JSON.stringify(response.data))

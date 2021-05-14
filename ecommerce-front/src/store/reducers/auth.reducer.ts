@@ -78,21 +78,27 @@ export default function authReducer(
         }
       }
     case SIGNIN:
-      return {
-        ...state,
-        signin: {
-          loaded: false,
-          success: false,
-          message: ""
+      {
+        console.log('signin--reducer----')
+        return {
+          ...state,
+          signin: {
+            loaded: false,
+            success: false,
+            message: ""
+          }
         }
       }
     case SIGNIN_SUCCESS:
-      return {
-        ...state,
-        signin: {
-          loaded: true,
-          success: true,
-          message: ""
+      {
+        console.log('signin-success--')
+        return {
+          ...state,
+          signin: {
+            loaded: true,
+            success: true,
+            message: ""
+          }
         }
       }
     case SIGNIN_FAIL:
