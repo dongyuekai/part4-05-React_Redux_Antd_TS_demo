@@ -27,28 +27,28 @@ const AddProduct = () => {
   const { user, token } = isAuth() as Jwt
 
   const onFinish = (product: any) => {
-    // const formData = new FormData()
-    // for (let attr in product) {
-    //   formData.set(attr, product[attr])
-    // }
-    // if (typeof file !== "undefined") {
-    //   formData.set("photo", file)
-    // }
+    const formData = new FormData()
+    for (let attr in product) {
+      formData.set(attr, product[attr])
+    }
+    if (typeof file !== "undefined") {
+      formData.set("photo", file)
+    }
 
-    // axios
-    //   .post(`${API}/product/create/${user._id}`, formData, {
-    //     headers: {
-    //       Authorization: `Bearer ${token}`
-    //     }
-    //   })
-    //   .then(
-    //     () => {
-    //       message.success("商品添加成功")
-    //     },
-    //     () => {
-    //       message.error("商品添加失败")
-    //     }
-    //   )
+    axios
+      .post(`${API}/product/create/${user._id}`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(
+        () => {
+          message.success("商品添加成功")
+        },
+        () => {
+          message.error("商品添加失败")
+        }
+      )
   }
 
   const addProductForm = () => {
@@ -56,6 +56,7 @@ const AddProduct = () => {
       accept: "image/*",
       beforeUpload: function (file: RcFile) {
         setFile(file)
+        // 阻止默认行为
         return false
       }
     }
