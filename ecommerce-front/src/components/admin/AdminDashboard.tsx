@@ -22,7 +22,7 @@ const AdminDashboard = () => {
   // 左侧操作区
   const adminLinks = () => {
     return (
-      <div style={{ border: '1px solid red' }}>
+      <div>
         <Title level={5}>管理员链接</Title>
         <Menu>
           <Menu.Item>
