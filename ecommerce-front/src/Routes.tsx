@@ -13,6 +13,7 @@ import Signup from "./components/core/Signup"
 import Product from './components/core/Product'
 import Cart from './components/core/Cart'
 import PaySuccess from './components/core/Success'
+import Orders from "./components/admin/Orders"
 
 const Routes = () => {
   return (
@@ -26,6 +27,7 @@ const Routes = () => {
         <AdminRoute path="/admin/dashboard" component={AdminDashboard} />
         <AdminRoute path="/create/category" component={AddCategory} />
         <AdminRoute path="/create/product" component={AddProduct} />
+        <AdminRoute path='/admin/orders' component={Orders} />
         <Route path='/product/:productId' component={Product} />
         <Route path='/cart' component={Cart} />
 
