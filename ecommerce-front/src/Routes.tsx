@@ -11,7 +11,7 @@ import Shop from "./components/core/Shop"
 import Signin from "./components/core/Signin"
 import Signup from "./components/core/Signup"
 import Product from './components/core/Product'
-import Cart from './components/core/cart'
+import Cart from './components/core/Cart'
 
 const Routes = () => {
   return (

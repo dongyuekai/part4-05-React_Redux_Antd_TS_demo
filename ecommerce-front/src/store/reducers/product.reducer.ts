@@ -142,7 +142,6 @@ export default function productReducer(
         }
       }
     case GET_PRODUCT_BY_ID: {
-      debugger
       return {
         ...state,
         product: {
@@ -153,7 +152,6 @@ export default function productReducer(
       }
     }
     case GET_PRODUCT_BY_ID_SUCCESS: {
-      debugger
       return {
         ...state,
         product: {
