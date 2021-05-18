@@ -14,10 +14,26 @@ export const addItem = (item: Product, next: () => void) => {
     if (localStorage.getItem("cart")) {
       cart = JSON.parse(localStorage.getItem("cart")!)
     }
-    cart.push({
-      ...item,
-      count: 1
-    })
+    let index = cart.findIndex(_cart => _cart._id === item._id)
+
+    if (index !== -1) {
+      cart = cart.map(_cart => {
+        if (_cart._id === item._id) {
+          return {
+            ..._cart,
+            count: _cart.count + 1
+          }
+        } else {
+          return _cart
+        }
+      })
+    } else {
+      cart.push({
+        ...item,
+        count: 1
+      })
+    }
+
   }
   cart = Array.from(new Set(cart.map(item => item._id))).map(item => {
     return cart.find(product => product._id === item)
