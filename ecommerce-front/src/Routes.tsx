@@ -10,6 +10,8 @@ import Home from "./components/core/Home"
 import Shop from "./components/core/Shop"
 import Signin from "./components/core/Signin"
 import Signup from "./components/core/Signup"
+import Product from './components/core/Product'
+import Cart from './components/core/cart'
 
 const Routes = () => {
   return (
@@ -23,6 +25,8 @@ const Routes = () => {
         <AdminRoute path="/admin/dashboard" component={AdminDashboard} />
         <AdminRoute path="/create/category" component={AddCategory} />
         <AdminRoute path="/create/product" component={AddProduct} />
+        <Route path='/product/:productId' component={Product} />
+        <Route path='/cart' component={Cart} />
 
       </Switch>
     </HashRouter>

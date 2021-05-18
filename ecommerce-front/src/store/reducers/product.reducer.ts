@@ -123,23 +123,26 @@ export default function productReducer(
         }
       }
     case FILTER_PRODUCT_SUCCESS:
-      let data =
-        action.skip === 0
-          ? action.payload.data
-          : [...state.filter.result.data, ...action.payload.data]
+      {
+        let data =
+          action.skip === 0
+            ? action.payload.data
+            : [...state.filter.result.data, ...action.payload.data]
 
-      return {
-        ...state,
-        filter: {
-          loaded: true,
-          success: true,
-          result: {
-            size: action.payload.size,
-            data
+        return {
+          ...state,
+          filter: {
+            loaded: true,
+            success: true,
+            result: {
+              size: action.payload.size,
+              data
+            }
           }
         }
       }
-    case GET_PRODUCT_BY_ID:
+    case GET_PRODUCT_BY_ID: {
+      debugger
       return {
         ...state,
         product: {
@@ -148,7 +151,9 @@ export default function productReducer(
           success: false
         }
       }
+    }
     case GET_PRODUCT_BY_ID_SUCCESS: {
+      debugger
       return {
         ...state,
         product: {
