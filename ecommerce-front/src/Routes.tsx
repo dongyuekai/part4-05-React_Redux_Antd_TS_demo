@@ -12,6 +12,7 @@ import Signin from "./components/core/Signin"
 import Signup from "./components/core/Signup"
 import Product from './components/core/Product'
 import Cart from './components/core/Cart'
+import PaySuccess from './components/core/Success'
 
 const Routes = () => {
   return (
@@ -28,6 +29,8 @@ const Routes = () => {
         <Route path='/product/:productId' component={Product} />
         <Route path='/cart' component={Cart} />
 
+        {/* 支付成功后的跳转页面 */}
+        <Route path='/paysuccess' component={PaySuccess} />
       </Switch>
     </HashRouter>
   )
